@@ -4,15 +4,12 @@ $button.addEventListener('click', async () => {
     audio:true,
     video:true
   })
-  const media_recorder = new MediaRecorder(media, {
-      mimeType:'video/mp4;codecs=avc1.424028,mp4a.40.2'
-    })
+  const media_recorder = new MediaRecorder(media)
   media_recorder.start()
   const file_aud = media.getVideoTracks()
   file_aud.addEventListener("ended", () => {
     mediarecorder.stop()
   })
-
   media_recorder.addEventListener("dataavailable", (e) => {
     const link = document.createElement("a")
     link.href = URL.createObjectURL(e.data)
