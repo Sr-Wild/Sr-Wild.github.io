@@ -5,6 +5,7 @@ $button.addEventListener('click', async () => {
     audio:true,
     video: { frameRate: { ideal: 60 } }
   })
+  
   const type = 
   [
     'video/webm;codecs="vp9.02.10.10.01.09.16.09.01,opus"'
