@@ -6,7 +6,9 @@ $button.addEventListener('click', async () => {
     video: { frameRate: { ideal: 60 } }
   })
   const mediarecorder = new MediaRecorder(media, {
-    mimeType: 'video/webm;codecs=vp8,opus'
+    mimeType: 'video/webm;codecs="vp09.02.10.10.01.09.16.09.01,opus"',
+    audioBitsPerSecond:128000,
+    videoBitsPerSecond:2500000
   })
   mediarecorder.start()
 
