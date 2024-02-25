@@ -4,12 +4,9 @@ $button.addEventListener('click', async () => {
     audio:true,
     video:true
   })
-  const media_recorder = new MediaRecorder(
-    media,
-    {
-      mimeType:'video/mp4;codecs=avc1.424028,mp4a.40.2',
-    }
-    )
+  const media_recorder = new MediaRecorder(media, {
+      mimeType:'video/mp4;codecs=avc1.424028,mp4a.40.2'
+    })
   media_recorder.start()
   const file_aud = media.getVideoTracks()
   file_aud.addEventListener("ended", () => {
@@ -22,5 +19,4 @@ $button.addEventListener('click', async () => {
     link.download = "captura.mp4"
     link.click()
   })
-  setInterval()
 })
