@@ -4,22 +4,23 @@ $button.addEventListener('click', async () => {
     audio:true,
     video:true
   })
-  const mediarecorder = new MediaRecorder(
+  const media_recorder = new MediaRecorder(
     media,
-    {mimeType:'video/mp4;codecs="avc1.424028, mp4a.40.2"'}
+    {
+      mimeType:'video/mp4;codecs=avc1.424028,mp4a.40.2',
+    }
     )
-  mediarecorder.start()
-
-
-  const [video] = media.getVideoTracks()
-  video.addEventListener("ended", () => {
+  media_recorder.start()
+  const file_aud = media.getVideoTracks()
+  file_aud.addEventListener("ended", () => {
     mediarecorder.stop()
   })
 
-  mediarecorder.addEventListener("dataavailable", (e) => {
+  media_recorder.addEventListener("dataavailable", (e) => {
     const link = document.createElement("a")
     link.href = URL.createObjectURL(e.data)
     link.download = "captura.mp4"
     link.click()
   })
+  setInterval()
 })
