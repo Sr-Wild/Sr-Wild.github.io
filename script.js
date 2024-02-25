@@ -7,7 +7,7 @@ $button.addEventListener('click', async () => {
   })
   const type = 
   [
-    'video/webm;codecs="vp09.02.10.10.01.09.16.09.01,opus"'
+    'video/webm;codecs="vp9.02.10.10.01.09.16.09.01,opus"'
   ]
 
   const mediarecorder = new MediaRecorder(media, {
