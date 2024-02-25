@@ -1,0 +1,23 @@
+
+body {
+	height: 100vh;
+	background: #111;
+	display: grid;
+	place-content: center;
+}
+
+button {
+  font-family:sans-serif;
+  color: white;
+  transition-duration: 0.45s;
+  border: none;
+  border-radius: 5px;
+	font-size: 34px;
+  background-color: rebeccapurple;
+  box-shadow: 0 8px 16px 0 rgb(0,0,0,0.2),0 6px 20px 0 rgb(0,0,0,0.19);
+}
+button:hover{
+  color: #111;
+  background-color:rgb(170, 127, 213);
+}
+
