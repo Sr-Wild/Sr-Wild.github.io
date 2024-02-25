@@ -3,7 +3,7 @@ const $button = document.querySelector('button')
 $button.addEventListener('click', async () => {
   const media = await navigator.mediaDevices.getDisplayMedia({
     audio:true,
-    video: { frameRate: { ideal: 30 } }
+    video: { frameRate: { ideal: 60 } }
   })
   const mediarecorder = new MediaRecorder(media, {
     mimeType: 'video/webm;codecs=vp8,opus'
