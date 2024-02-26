@@ -8,6 +8,14 @@ $button.addEventListener('click', async () => {
   
   const type = 
   [
+    'video/mp4',
+    'video/webm',
+    'audio/webm',
+    'video/webm;codecs=vp8',
+    'video/webm;codecs=daala',
+    'video/webm;codecs=h264',
+    'audio/webm;codecs=opus',
+    'video/mpeg',
     'video/webm;codecs="vp9.02.10.10.01.09.16.09.01,opus"'
   ]
 
@@ -26,7 +34,7 @@ $button.addEventListener('click', async () => {
   mediarecorder.addEventListener("dataavailable", (e) => {
     const link = document.createElement("a")
     link.href = URL.createObjectURL(e.data)
-    link.download = "captura.webm"
+    link.download = "captura"
     link.click()
   })
 })
