@@ -8,7 +8,6 @@ $button.addEventListener('click', async () => {
   
   const type = 
   [
-    'video/mp4',
     'video/webm',
     'audio/webm',
     'video/webm;codecs=vp8',
