@@ -14,7 +14,6 @@ $button.addEventListener('click', async () => {
     'video/webm;codecs=daala',
     'video/webm;codecs=h264',
     'audio/webm;codecs=opus',
-    'video/mpeg',
     'video/webm;codecs="vp9.02.10.10.01.09.16.09.01,opus"'
   ]
 
