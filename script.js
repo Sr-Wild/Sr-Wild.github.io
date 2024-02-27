@@ -6,10 +6,8 @@ $button.addEventListener('click', async () => {
     video: { frameRate: { ideal: 30 } }
   })
   
-  const type_video_format = ['video/webm;codecs="vp9.02.10.10.01.09.16.09.01,opus"']
-
   const media_recorder = new MediaRecorder(media, {
-    mimeType:type_video_format,
+    mimeType:'video/webm;codecs=vp9,opus',
     audioBitsPerSecond:128000,
     videoBitsPerSecond:2500000
   })
@@ -19,7 +17,6 @@ $button.addEventListener('click', async () => {
   video.addEventListener("ended", () => {
     media_recorder.stop()
   })
-
   media_recorder.addEventListener("dataavailable", (e) => {
     const link = document.createElement("a")
     link.href = URL.createObjectURL(e.data)
