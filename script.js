@@ -1,7 +1,6 @@
 const $button = document.querySelector('button')
 
 const option  = {
-    mimeType:"video/webm;codecs=vp9,opus",
     audioBitsPerSecond:2500000,
     videoBitsPerSecond:2500000
 }
@@ -9,6 +8,7 @@ const setting = {
     audio:true,
     video: { frameRate: { ideal: 30 } }
 }
+const video_format={type:"video/mp4"}
 const recorded_Chunks = [];
 
 $button.addEventListener('click', async () => {
@@ -25,7 +25,7 @@ $button.addEventListener('click', async () => {
     }
   }
   function download() {
-    const blob = new Blob(recorded_Chunks);
+    const blob = new Blob(recorded_Chunks,video_format);
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     document.body.appendChild(a);
