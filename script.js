@@ -6,19 +6,10 @@ $button.addEventListener('click', async () => {
     video: { frameRate: { ideal: 60 } }
   })
   
-  const type = 
-  [
-    'video/webm',
-    'audio/webm',
-    'video/webm;codecs=vp8',
-    'video/webm;codecs=daala',
-    'video/webm;codecs=h264',
-    'audio/webm;codecs=opus',
-    'video/webm;codecs="vp9.02.10.10.01.09.16.09.01,opus"'
-  ]
+  const type_video_format = ['video/webm;codecs="vp9.02.10.10.01.09.16.09.01,opus"']
 
   const mediarecorder = new MediaRecorder(media, {
-    mimeType:type,
+    mimeType:type_video_format,
     audioBitsPerSecond:128000,
     videoBitsPerSecond:2500000
   })
