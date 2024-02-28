@@ -3,7 +3,6 @@ const $button = document.querySelector('button')
 $button.addEventListener('click', async () => {
   const option  = {
     mineType:'video/mp4; codecs="av01.2.19H.12.0.000.09.16.09.1,opus"'
-    
   }
   const setting = {
     audio:true,
@@ -24,13 +23,13 @@ $button.addEventListener('click', async () => {
     }
   }
   function download() {
-    const blob = new Blob(recorded_Chunks);
+    const blob = new Blob(recorded_Chunks,{type:"video/mp4"});
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     document.body.appendChild(a);
     a.style = "display: none";
     a.href = url;
-    a.download = "test";
+    a.download = "captura";
     a.click();
     window.URL.revokeObjectURL(url);
   }
