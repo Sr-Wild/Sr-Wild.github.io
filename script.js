@@ -1,17 +1,16 @@
 const $button = document.querySelector('button')
 
-const option  = {
-    audioBitsPerSecond:2500000,
-    videoBitsPerSecond:2500000
-}
-const setting = {
+$button.addEventListener('click', async () => {
+  const option  = {
+    mineType:'video/mp4; codecs="av01.2.19H.12.0.000.09.16.09.1,opus"'
+    
+  }
+  const setting = {
     audio:true,
     video: { frameRate: { ideal: 30 } }
-}
-const video_format={type:"video/mp4"}
-const recorded_Chunks = [];
+  }
+  const recorded_Chunks = [];
 
-$button.addEventListener('click', async () => {
   const media = await navigator.mediaDevices.getDisplayMedia(setting)
   const media_recorder = new MediaRecorder(media,option)
   media_recorder.ondataavailable = handle_data_available;
@@ -25,7 +24,7 @@ $button.addEventListener('click', async () => {
     }
   }
   function download() {
-    const blob = new Blob(recorded_Chunks,video_format);
+    const blob = new Blob(recorded_Chunks);
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     document.body.appendChild(a);
